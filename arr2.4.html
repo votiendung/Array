@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dem so tu trong mot chuoi</title>
+</head>
+<body>
+<script>
+    let num = +prompt('nhap so luong day');
+    let arr = [];
+    for (let i = 0; i < num; i++) {
+        arr[i] = prompt('nhap cac phan tu cua day')
+    }
+    arr.toString();
+    console.log(arr);
+    let index = 0;
+    function isNumber(n) {
+        for (i = 0; i <arr.length; i++){
+            if (isNaN(arr[i]) == false) {
+                index += 1;
+            }
+        } return index
+    }
+    document.write("chuoi nhap vao la: " + arr + "<br>" + "so trong mot chuoi la: " + isNumber() + "so");
+</script>
+</body>
+</html>

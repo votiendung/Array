@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let eng = ["yes","no","never"];
+    let vie = ["có","không","không bao giờ"];
+    let word = prompt("Nhập từ bạn muốn tra cứu: "," anh yeu em khong ???");
+    if (eng.includes(word)){
+        document.write(vie[eng.indexOf(word)]);
+    }else if(vie.includes(word)) {
+        document.write(eng[vie.indexOf(word)]);
+    }
+    else {
+        alert(" khong tim thay tu");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var num = [];
+    for (i = 0; i < 4; i++) {
+        num[i] = parseInt(prompt('nhap num'));
+    }
+    var max = num[0];
+
+    function maxArr(a) {
+        for (i = 0; i < a.length; i++) {
+            if (max < a[i]) {
+                max = a[i];
+            }
+        }
+        return max;
+    }
+
+    document.write("gia tri max trong mang " + num.toString() + " la:\n" + maxArr(num) +', vi tri trong mang la: ' + num.indexOf(maxArr(num)));
+</script>
+</body>
+</html>

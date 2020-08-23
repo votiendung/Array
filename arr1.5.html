@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dem so nguyen tron mot chuoi</title>
+</head>
+<body>
+<script>
+    let numbers = [];
+    for (let i = 0; i < 5; i++) {
+        numbers[i] = parseInt(prompt('nhap num'));
+    }
+let index = 0
+    function demSoNguyenAm() {
+        for (i = 0; i < numbers.length; i++) {
+        if(numbers[i] < 0) {
+            index += 1;
+        }
+        }
+        return index;
+    }
+    document.write(numbers.toString() + " la nhung so nhap vao <br> " +"so nguyen am trong chuoi la:  " + demSoNguyenAm());
+</script>
+</body>
+</html>

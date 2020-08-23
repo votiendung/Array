@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num = prompt('nhap so luong day ky tu');
+    let text = [];
+    index = 0;
+    for (let i = 0; i < num; i++) {
+        text[i] = prompt('nhap day');
+    }
+    index = 0;
+    function isNumber(n) {
+        for (i = 0; i <text.length; i++){
+            if (isNaN(text[i]) == false){
+                index +=1;
+            }
+        }return index;
+    }
+    // text.toString();
+     document.write("mang nhap vao la: " + text + "<br>" + "so ky tu trong mang la: " + isNumber());
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num = [];
+    let numNew = [];
+    for ( let i = 0; i < 4; i ++){
+        num[i] = parseInt(prompt('nhap num vao:'))
+    }
+    for (let i = 0; i<num.length; i++){
+        if (num[i] >= 10) {
+            numNew.push(num[i]);
+        }
+    }
+    document.write(numNew.toString());
+
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num = +prompt('nhap so luong day');
+    let numArr = [];
+    for (let i = 0; i < num; i++) {
+        numArr[i] = +prompt('nhap so');
+    }
+    function maxMin(num) {
+        for (let i = 0; i < num.length-1; i++) {
+            for (let j = i + 1; j < num.length; j++) {
+                if (num[i] < num[j] ) {
+                    let numX = num[i];
+                    num[i] = num[j];
+                    num[j] = numX;
+                }
+            }
+        }
+
+        return num;
+    }
+    document.write('mang giam dan la:' + maxMin(numArr));
+</script>
+</body>
+</html>

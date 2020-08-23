@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 50px;
+            width: 960px;
+            height: auto;
+            overflow: hidden;
+            background-color: lightskyblue;
+            text-align: center;
+        }
+        button{
+            width: 60px; height: 60px;
+        }
+    </style>
+</head>
+<body>
+<h1>Tic Tac Toe</h1>
+<button onclick="myfunction(0)"></button>
+<button onclick="myfunction(1)"></button>
+<button onclick="myfunction(2)"></button></br>
+<button onclick="myfunction(3)"></button>
+<button onclick="myfunction(4)"></button>
+<button onclick="myfunction(5)"></button></br>
+<button onclick="myfunction(6)"></button>
+<button onclick="myfunction(7)"></button>
+<button onclick="myfunction(8)"></button></br>
+</body>
+<script>
+    var co = true;
+    var dem = 0;
+    function myfunction(btn){
+        var node = document.getElementsByTagName("button")[btn];
+        node.innerHTML=co?"X":"O";
+        node.style.backgroundColor = co?"blu":"yellow";
+        node.setAttribute("disabled","true");
+        co = !co;
+      
+        
+    }
+</script>
+</html>

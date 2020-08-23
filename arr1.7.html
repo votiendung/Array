@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numbers = [];
+    let pushArray = parseInt(prompt('nhap so luong day'));
+    let index;
+    for (let i = 0; i < pushArray; i++) {
+        numbers[i] = parseInt(prompt('nhap day'));
+    }
+    var V = parseInt(prompt('nhap so V'));
+    function deleteV() {
+
+        for (i = 0; i < numbers.length; i++) {
+            if (numbers[i] == V) {
+                numbers.splice(i,1);
+                numbers.push(0);
+                console.log(numbers);
+            }
+        }
+        return numbers;
+    }
+document.write("so da xoa là: " + (V) + "<br>" + "mang khi da xoa la:" + deleteV());
+
+</script>
+</body>
+</html>

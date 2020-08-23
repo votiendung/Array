@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hai chuoi co giong nhau hay khong</title>
+</head>
+<body>
+<script>
+    let text1 = prompt(' nhap chuoi 1');
+    let text2 = prompt('nhap chuoi 2');
+    if (text1.length !==text2.length) {
+        alert('hai chuoi khac nhau');
+    } else {
+        for (let i =0; i < text1.length; i++) {
+            if (text1[i] != text2[i]) {
+                alert('hai chuoi khong giong nhau');
+            }else {
+                alert('hai chuoi giong nhau');
+            }
+        }
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+<h1>Tic Tac Toe Game</h1>
+<p id="display" style="font-size: 50px"></p>
+<p id="turn"></p>
+<input id="btnStart" type="button" value="Start" onclick="changeValue();">
+<input id="btnReset" type="button" value="Reset" onclick="resetGame();">
+
+<script>
+    let boardArr = [];
+    for (let i = 0; i < 3; i++) {
+        boardArr[i] = [".", ".", "."];
+    }
+    let player = true;
+
+    function displayBoard() {
+        let show = "";
+        for (let i = 0; i < 3; i++) {
+            show += "<br>";
+            for (let j = 0; j < 3; j++) {
+                show += boardArr[i][j] + "&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        document.getElementById("display").innerHTML = show;
+        document.getElementById("btnReset").disabled=true;
+        if (player) {
+            document.getElementById("turn").innerHTML = "Lượt của người chơi 1";
+        } else {
+            document.getElementById("turn").innerHTML = "Lượt của người chơi 2";
+        }
+    }
+
+    displayBoard();
+
+    function changeValue() {
+        let posX = parseInt(prompt("Nhập toạ độ X: ")) - 1;
+        let posY = parseInt(prompt("Nhập toạ độ Y: ")) - 1;
+        while ((boardArr[posY][posX] !== ".")||posX<0||posX>2||posY<0||posY>2) {
+            alert("Nước đi đó mình đi nhầm, cho mình đi lại nha :>");
+            posX = parseInt(prompt("Nhập toạ độ X: ")) - 1;
+            posY = parseInt(prompt("Nhập toạ độ Y: ")) - 1;
+        }
+        if (player) {
+            boardArr[posY][posX] = "O";
+            player = false;
+        } else {
+            boardArr[posY][posX] = "X";
+            player = true;
+        }
+        displayBoard();
+        gameOver();
+    }
+
+    function gameOver() {
+        let check=false;
+        if((boardArr[0][0]===boardArr[0][1]&&boardArr[0][0]===boardArr[0][2]&&boardArr[0][0]!==".")||(boardArr[1][0]===boardArr[1][1]&&boardArr[1][1]===boardArr[1][2]&&boardArr[1][0]!==".")||(boardArr[2][0]===boardArr[2][1]&&boardArr[2][0]===boardArr[2][2]&&boardArr[2][0]!==".")){
+            check=true;
+        }
+        if((boardArr[0][0]===boardArr[1][0]&&boardArr[1][0]===boardArr[2][0]&&boardArr[2][0]!==".")||(boardArr[0][1]===boardArr[1][1]&&boardArr[1][1]===boardArr[2][1]&&boardArr[0][1]!==".")||(boardArr[0][2]===boardArr[1][2]&&boardArr[1][2]===boardArr[2][2]&&boardArr[0][2]!==".")){
+            check=true;
+        }
+        if((boardArr[0][0]===boardArr[1][1]&&boardArr[0][0]===boardArr[2][2]&&boardArr[0][0]!==".")||(boardArr[0][2]===boardArr[1][1]&&boardArr[1][1]===boardArr[2][0]&&boardArr[0][2]!==".")){
+            check=true;
+        }
+        if (check) {
+            document.getElementById("turn").innerHTML="Trò chơi kết thúc";
+            document.getElementById("btnStart").disabled=true;
+        }
+        document.getElementById("btnReset").disabled=false;
+    }
+    function resetGame() {
+        for (let i = 0; i < 3; i++) {
+            boardArr[i] = [".", ".", "."];
+        }
+        displayBoard();
+        player = true;
+        document.getElementById("turn").innerHTML = "Lượt của người chơi 1";
+    }
+</script>
+</body>
+</html>

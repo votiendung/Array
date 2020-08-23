@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <h2>Type anthing slowly</h2>
+    <label><textarea id="text" cols="50" rows="10" onkeydown="fakingText()"></textarea></label>
+</div>
+<script>
+    let arrStr = ['T', 'O', 'I', ' ', 'L', 'A', ' ', 'K', 'E', ' ', 'B', 'A', ' ', 'T', 'A', 'I'];
+    console.log(arrStr);
+    let n = "";
+
+    function fakingText() {
+        let status = document.getElementById('text').value;
+        if (status.length > 0) {
+            for (let i = 0; i < status.length; i++) {
+                n += arrStr[i];
+                if (i == 16) {
+                    document.getElementById("text").value = "";
+                    n = "";
+                }
+            }
+        }
+        document.getElementById("text").value =n;
+        n="";
+
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find Max Number</title>
+</head>
+<body>
+<script>
+    let numbers = [];
+    let max = 0;
+    for (let i = 0; i < 4; i++) {
+        numbers[i] = parseInt(prompt('Enter number:'));
+    }
+    console.log(numbers);
+    function findMaxNumbers() {
+        max = numbers[0];
+        for (let i = 1; i < numbers.length; i++) {
+            if (max < numbers[i]) {
+                max = numbers[i];
+            }
+        }
+        console.log(max);
+        return max;
+    }
+    document.write(numbers.toString() + ' la nhung so ban nhap vao <br>'  +findMaxNumbers()+ ' la so lon nhat thuoc vi tri:' + numbers.indexOf(max));
+</script>
+</body>
+</html>
